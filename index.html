@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirishi Kesavan | Full Stack Developer</title>
+
+    <meta name="description" content="Hirishi Kesavan – Full Stack Web Developer skilled in Java, Angular, .NET, JavaScript, and UI/UX design.">
+
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -12,7 +16,7 @@
             --dark: #0a192f;
             --light: #ccd6f6;
             --white: #e6f1ff;
-            --gray: #8892b0;
+            --gray: #a8b2d1;
         }
 
         * {
@@ -31,11 +35,13 @@
         header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
-            background-color: rgba(10,25,47,0.9);
+            align-items: center;
+            background-color: rgba(10, 25, 47, 0.9);
             z-index: 100;
         }
 
@@ -58,10 +64,16 @@
         nav ul li a {
             color: var(--light);
             text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
             color: var(--primary);
+        }
+
+        main {
+            margin-top: 80px;
         }
 
         #hero {
@@ -71,8 +83,27 @@
             padding: 0 10%;
         }
 
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         .hero-content h1 span {
             color: var(--primary);
+        }
+
+        .hero-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            margin-bottom: 2rem;
+            color: var(--gray);
         }
 
         .btn {
@@ -82,13 +113,20 @@
             color: var(--white);
             border-radius: 4px;
             text-decoration: none;
+            font-weight: 600;
             margin-right: 1rem;
+            transition: 0.3s;
         }
 
         .btn-outline {
             background: transparent;
             border: 1px solid var(--primary);
             color: var(--primary);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(41, 98, 255, 0.2);
         }
 
         section {
@@ -98,27 +136,77 @@
         .section-title {
             font-size: 2rem;
             margin-bottom: 3rem;
+            color: var(--white);
             position: relative;
         }
 
         .section-title::after {
             content: '';
-            width: 70px;
-            height: 3px;
-            background: var(--primary);
             position: absolute;
             bottom: -10px;
             left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 2rem;
+        }
+
+        .about-text p {
+            color: var(--gray);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+
+        .experience-item,
+        .education-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .company-logo,
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .experience-details ul {
+            margin-left: 1.5rem;
+            color: var(--gray);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .project-card {
-            background: rgba(20,40,80,0.5);
+            background-color: rgba(20, 40, 80, 0.5);
             border-radius: 8px;
             overflow: hidden;
             transition: 0.3s;
@@ -146,128 +234,200 @@
         }
 
         .project-tag {
-            background: rgba(41,98,255,0.1);
+            background: rgba(41, 98, 255, 0.1);
             color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
         }
 
+        #contact {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            font-size: 2rem;
+            color: var(--light);
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
-            background: rgba(10,25,47,0.9);
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 4rem 5%;
+            }
+            #hero {
+                padding: 0 5%;
+                text-align: center;
+            }
+            .experience-item,
+            .education-item {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
-
 <header>
     <a href="#" class="logo">Hirishi</a>
     <nav>
         <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
+<main>
 <section id="hero">
     <div class="hero-content">
         <h1>Hi, I'm <span>Hirishi Kesavan</span></h1>
         <h3>Full Stack Web Developer</h3>
-        <p>Motivated IT student passionate about full stack development and UI/UX design.</p>
+        <p>Motivated IT student passionate about building scalable web applications and user-friendly interfaces.</p>
         <a href="#projects" class="btn">View Projects</a>
-        <a href="#" class="btn btn-outline">Download Resume</a>
+        <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
     </div>
 </section>
 
-<!-- PROJECTS -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>Motivated IT student with strong foundations in software development and web technologies.</p>
+        </div>
+        <div class="skills">
+            <div class="skill-item"><i class="fab fa-java skill-icon"></i>Java</div>
+            <div class="skill-item"><i class="fas fa-database skill-icon"></i>SQL</div>
+            <div class="skill-item"><i class="fab fa-html5 skill-icon"></i>HTML</div>
+            <div class="skill-item"><i class="fab fa-css3-alt skill-icon"></i>CSS</div>
+            <div class="skill-item"><i class="fab fa-js skill-icon"></i>JavaScript</div>
+            <div class="skill-item"><i class="fab fa-git-alt skill-icon"></i>Git</div>
+            <div class="skill-item"><i class="fab fa-figma skill-icon"></i>Figma</div>
+            <div class="skill-item"><i class="fas fa-database skill-icon"></i>MySQL</div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-item">
+        <img src="https://www.nbmcw.com/images/news/CMRL.webp" alt="CMRL Logo" loading="lazy" class="company-logo">
+        <div class="experience-details">
+            <h3>Chennai Metro Rail Limited</h3>
+            <h4>Full Stack Web Developer Intern</h4>
+            <ul>
+                <li>
+                    Competency Certificate Generator
+                    <ul>
+                        <li>Angular frontend with .NET Core API</li>
+                        <li>SQL Server database design</li>
+                    </ul>
+                </li>
+                <li>
+                    Secure Document Generation
+                    <ul>
+                        <li>Dynamic PDF generation</li>
+                        <li>Digital signature validation</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9vHJk5DB_zBUgtKCy4bWM3NCUc9XZpzG1g&s" alt="Bigsibugs Logo" loading="lazy" class="company-logo">
+        <div class="experience-details">
+            <h3>Bigsibugs Innovation Pvt. Ltd.</h3>
+            <h4>Web Developer Intern</h4>
+            <ul>
+                <li>
+                    Frontend Development
+                    <ul>
+                        <li>Responsive UI using HTML, CSS, JS</li>
+                        <li>Client-side validation</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 <section id="projects">
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
-
-        <!-- 1 -->
         <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6b8c1c29?auto=format&fit=crop&w=800&q=60')"></div>
-            <div class="project-info">
-                <h3>Competency Certificate Generator</h3>
-                <p>
-                    Built an Angular frontend with .NET Core API backend to automate employee certification.
-                    Designed SQL Server schema, dynamic PDF generation, digital signature validation,
-                    and role-based access control.
-                </p>
-                <div class="project-tags">
-                    <span class="project-tag">Angular</span>
-                    <span class="project-tag">.NET Core</span>
-                    <span class="project-tag">SQL Server</span>
-                    <span class="project-tag">RBAC</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=60')"></div>
-            <div class="project-info">
-                <h3>Stock Price Prediction</h3>
-                <p>LSTM-based time-series model to forecast stock prices.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">Deep Learning</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=60')"></div>
+            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');"></div>
             <div class="project-info">
                 <h3>FoodFeast</h3>
-                <p>Responsive food ordering platform with interactive menus.</p>
+                <p>Responsive food ordering website.</p>
                 <div class="project-tags">
                     <span class="project-tag">HTML</span>
                     <span class="project-tag">CSS</span>
-                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">JS</span>
                 </div>
+                <a href="https://github.com/Hirishikesavan/Food-Feast-Food-Ordering-website.git" target="_blank">GitHub</a>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Others unchanged -->
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&w=500&q=60')"></div>
-            <div class="project-info">
-                <h3>Weather Forecasting</h3>
-            </div>
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQCmT18MthwZuSNhssTyKdMTYkEeIwZCofqw&s" alt="College Logo" loading="lazy" class="education-logo">
+        <div>
+            <h3>B.Tech Information Technology</h3>
+            <h4>St. Joseph's Institute of Technology</h4>
+            <p>2022 – 2026</p>
         </div>
-
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=500&q=60')"></div>
-            <div class="project-info">
-                <h3>Tic Tac Toe Game</h3>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=500&q=60')"></div>
-            <div class="project-info">
-                <h3>E-commerce Mobile App UI/UX</h3>
-            </div>
-        </div>
-
     </div>
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: hirishi2020@gmail.com</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-links">
+        <a href="mailto:hirishi2020@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/hirishi-kesavan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Hirishikesavan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>hirishi2020@gmail.com</p>
+    <p>+91 8939127198</p>
 </section>
+</main>
 
 <footer>
     <p>© 2026 Hirishi Kesavan</p>
 </footer>
 
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
 </body>
 </html>
+
 
