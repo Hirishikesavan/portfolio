@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirishi Kesavan | Full Stack Developer</title>
-
-    <meta name="description" content="Hirishi Kesavan – Full Stack Web Developer skilled in Java, Angular, .NET, JavaScript, and UI/UX design.">
-
-    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
             --primary: #2962ff;
             --dark: #0a192f;
             --light: #ccd6f6;
             --white: #e6f1ff;
-            --gray: #a8b2d1;
+            --gray: #8892b0;
         }
 
         * {
@@ -32,6 +28,7 @@
             line-height: 1.6;
         }
 
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -64,6 +61,7 @@
         nav ul li a {
             color: var(--light);
             text-decoration: none;
+            font-size: 1rem;
             font-weight: 500;
             transition: 0.3s;
         }
@@ -72,10 +70,7 @@
             color: var(--primary);
         }
 
-        main {
-            margin-top: 80px;
-        }
-
+        /* Hero Section */
         #hero {
             height: 100vh;
             display: flex;
@@ -89,6 +84,7 @@
 
         .hero-content h1 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
@@ -98,10 +94,12 @@
 
         .hero-content h3 {
             font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
         .hero-content p {
+            font-size: 1rem;
             margin-bottom: 2rem;
             color: var(--gray);
         }
@@ -119,7 +117,7 @@
         }
 
         .btn-outline {
-            background: transparent;
+            background-color: transparent;
             border: 1px solid var(--primary);
             color: var(--primary);
         }
@@ -129,12 +127,14 @@
             box-shadow: 0 10px 20px rgba(41, 98, 255, 0.2);
         }
 
+        /* Sections */
         section {
             padding: 6rem 10%;
         }
 
         .section-title {
             font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 3rem;
             color: var(--white);
             position: relative;
@@ -150,6 +150,7 @@
             background-color: var(--primary);
         }
 
+        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 3fr 2fr;
@@ -157,6 +158,7 @@
         }
 
         .about-text p {
+            margin-bottom: 1.5rem;
             color: var(--gray);
         }
 
@@ -169,6 +171,7 @@
         .skill-item {
             display: flex;
             align-items: center;
+            margin-bottom: 1rem;
         }
 
         .skill-icon {
@@ -177,28 +180,59 @@
             color: var(--primary);
         }
 
-        .experience-item,
-        .education-item {
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
             display: flex;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
 
-        .company-logo,
-        .education-logo {
+        .company-logo {
             width: 80px;
             height: 80px;
-            background: #fff;
-            padding: 5px;
-            border-radius: 8px;
             object-fit: contain;
+            border-radius: 8px;
+            background-color: white;
+            padding: 5px;
         }
 
-        .experience-details ul {
+        .experience-details {
+            flex: 1;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .experience-item h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
             margin-left: 1.5rem;
             color: var(--gray);
         }
 
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -214,16 +248,34 @@
 
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(41, 98, 255, 0.2);
         }
 
         .project-img {
             height: 200px;
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
             background-size: cover;
             background-position: center;
         }
 
         .project-info {
             padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .project-tags {
@@ -234,15 +286,67 @@
         }
 
         .project-tag {
-            background: rgba(41, 98, 255, 0.1);
+            background-color: rgba(41, 98, 255, 0.1);
             color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
         }
 
+        .project-links a {
+            color: var(--primary);
+            margin-right: 1rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: white;
+            padding: 5px;
+        }
+
+        .education-details {
+            flex: 1;
+        }
+
+        .education-item h3 {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item p {
+            color: var(--gray);
+        }
+
+        /* Contact Section */
         #contact {
             text-align: center;
+        }
+
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: var(--gray);
         }
 
         .contact-links {
@@ -255,179 +359,335 @@
         .contact-link {
             font-size: 2rem;
             color: var(--light);
+            transition: 0.3s;
         }
 
+        .contact-link:hover {
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+        }
+
+        .email-link:hover {
+            color: var(--white);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
+            background-color: rgba(10, 25, 47, 0.9);
             color: var(--gray);
+            font-size: 0.9rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
+            header {
+                padding: 1rem 5%;
             }
-            section {
-                padding: 4rem 5%;
-            }
+
             #hero {
                 padding: 0 5%;
                 text-align: center;
             }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
             .experience-item,
             .education-item {
                 flex-direction: column;
+                gap: 1rem;
+            }
+
+            .company-logo,
+            .education-logo {
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
 </head>
 
 <body>
-<header>
-    <a href="#" class="logo">Hirishi</a>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-<section id="hero">
-    <div class="hero-content">
-        <h1>Hi, I'm <span>Hirishi Kesavan</span></h1>
-        <h3>Full Stack Web Developer</h3>
-        <p>Motivated IT student passionate about building scalable web applications and user-friendly interfaces.</p>
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
-    </div>
-</section>
-
-<section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p>Motivated IT student with strong foundations in software development and web technologies.</p>
-        </div>
-        <div class="skills">
-            <div class="skill-item"><i class="fab fa-java skill-icon"></i>Java</div>
-            <div class="skill-item"><i class="fas fa-database skill-icon"></i>SQL</div>
-            <div class="skill-item"><i class="fab fa-html5 skill-icon"></i>HTML</div>
-            <div class="skill-item"><i class="fab fa-css3-alt skill-icon"></i>CSS</div>
-            <div class="skill-item"><i class="fab fa-js skill-icon"></i>JavaScript</div>
-            <div class="skill-item"><i class="fab fa-git-alt skill-icon"></i>Git</div>
-            <div class="skill-item"><i class="fab fa-figma skill-icon"></i>Figma</div>
-            <div class="skill-item"><i class="fas fa-database skill-icon"></i>MySQL</div>
-        </div>
-    </div>
-</section>
-
-<section id="experience">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="experience-item">
-        <img src="https://www.nbmcw.com/images/news/CMRL.webp" alt="CMRL Logo" loading="lazy" class="company-logo">
-        <div class="experience-details">
-            <h3>Chennai Metro Rail Limited</h3>
-            <h4>Full Stack Web Developer Intern</h4>
+    <header>
+        <a href="#" class="logo">Hirishi</a>
+        <nav>
             <ul>
-                <li>
-                    Competency Certificate Generator
-                    <ul>
-                        <li>Angular frontend with .NET Core API</li>
-                        <li>SQL Server database design</li>
-                    </ul>
-                </li>
-                <li>
-                    Secure Document Generation
-                    <ul>
-                        <li>Dynamic PDF generation</li>
-                        <li>Digital signature validation</li>
-                    </ul>
-                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="experience-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9vHJk5DB_zBUgtKCy4bWM3NCUc9XZpzG1g&s" alt="Bigsibugs Logo" loading="lazy" class="company-logo">
-        <div class="experience-details">
-            <h3>Bigsibugs Innovation Pvt. Ltd.</h3>
-            <h4>Web Developer Intern</h4>
-            <ul>
-                <li>
-                    Frontend Development
-                    <ul>
-                        <li>Responsive UI using HTML, CSS, JS</li>
-                        <li>Client-side validation</li>
-                    </ul>
-                </li>
-            </ul>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Hirishi Kesavan</span></h1>
+            <h3>Full Stack Web Developer</h3>
+            <p>Motivated IT student with a strong foundation in programming, software development, and web technologies. Passionate about full stack development and UI/UX design, with a focus on creating seamless and user-friendly digital experiences.</p>
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#" class="btn btn-outline">Download Resume</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');"></div>
-            <div class="project-info">
-                <h3>FoodFeast</h3>
-                <p>Responsive food ordering website.</p>
-                <div class="project-tags">
-                    <span class="project-tag">HTML</span>
-                    <span class="project-tag">CSS</span>
-                    <span class="project-tag">JS</span>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Motivated IT student with a strong foundation in programming, software development, and web technologies. Passionate about full stack development and UI/UX design, with a focus on creating seamless and user-friendly digital experiences. Eager to apply and expand skills through hands-on projects in a collaborative environment.</p>
+            </div>
+            <div class="skills">
+                <div class="skill-item">
+                    <i class="fab fa-java skill-icon"></i>
+                    <span>Java</span>
                 </div>
-                <a href="https://github.com/Hirishikesavan/Food-Feast-Food-Ordering-website.git" target="_blank">GitHub</a>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js skill-icon"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-figma skill-icon"></i>
+                    <span>Figma</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span>MySQL</span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="education">
-    <h2 class="section-title">Education</h2>
-    <div class="education-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQCmT18MthwZuSNhssTyKdMTYkEeIwZCofqw&s" alt="College Logo" loading="lazy" class="education-logo">
-        <div>
-            <h3>B.Tech Information Technology</h3>
-            <h4>St. Joseph's Institute of Technology</h4>
-            <p>2022 – 2026</p>
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-item">
+            <img src="https://www.nbmcw.com/images/news/CMRL.webp" alt="CMRL" class="company-logo">
+            <div class="experience-details">
+                <h3>Chennai Metro Rail Limited (CMRL)</h3>
+                <h4>Full Stack Web Developer Intern</h4>
+                <ul>
+                    <li>Developed Competency Certificate Generator
+                        <ul>
+                            <li>Built an Angular frontend with .NET Core API backend to automate employee certification</li>
+                            <li>Designed SQL Server database schema to store employee skills and certification data</li>
+                        </ul>
+                    </li>
+                    <li>Implemented Secure Document Generation
+                        <ul>
+                            <li>Created dynamic PDF templates with employee-specific competency details</li>
+                            <li>Integrated digital signature validation for certificate authenticity</li>
+                        </ul>
+                    </li>
+                    <li>Optimized Workflow Efficiency
+                        <ul>
+                            <li>Implemented role-based access control for HR and department managers</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+        <div class="experience-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9vHJk5DB_zBUgtKCy4bWM3NCUc9XZpzG1g&s" alt="Bigsibucks" class="company-logo">
+            <div class="experience-details">
+                <h3>Bigsibugs Innovation Pvt. Ltd.</h3>
+                <h4>Web Developer Intern</h4>
+                <ul>
+                    <li>Frontend Interface Development
+                        <ul>
+                            <li>Designed and built responsive user interfaces using HTML5, CSS3, and JavaScript</li>
+                            <li>Implemented intuitive layouts for real-time item selection, filtering, and user interaction</li>
+                        </ul>
+                    </li>
+                    <li>Interactive UI Features
+                        <ul>
+                            <li>Developed dynamic components such as modals, forms, and menus using vanilla JavaScript</li>
+                            <li>Enhanced user experience through smooth transitions and client-side validations</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-links">
-        <a href="mailto:hirishi2020@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/hirishi-kesavan" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Hirishikesavan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </div>
-    <p>hirishi2020@gmail.com</p>
-    <p>+91 8939127198</p>
-</section>
-</main>
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>FoodFeast</h3>
+                    <p>Designed a responsive food ordering platform with interactive menus and streamlined order flow.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Hirishikesavan/Food-Feast-Food-Ordering-website.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Weather Forecasting</h3>
+                    <p>Built a responsive site to display real-time weather data with a smooth and interactive user interface.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://hirishikesavan.github.io/WEATHER_API/" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Stock Price Prediction</h3>
+                    <p>Developed an LSTM-based time-series model to forecast stock prices and visualized trends for better insights.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Deep Learning</span>
+                        <span class="project-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Hirishikesavan/stock-project.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>Tic Tac Toe Game</h3>
+                    <p>Built using HTML, CSS, and JavaScript; implemented responsive UI and real-time interaction.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://hirishikesavan.github.io/Tic_tac_toe_game/" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="project-info">
+                    <h3>E-commerce Mobile App UI/UX</h3>
+                    <p>Designed a user-friendly and minimal checkout flow for a mobile e-commerce app using Figma.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://tinyurl.com/9k9cyzx2" target="_blank"><i class="fab fa-figma"></i> Design</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Hirishi Kesavan</p>
-</footer>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQCmT18MthwZuSNhssTyKdMTYkEeIwZCofqw&s" alt="St. Joseph's Institute" class="education-logo">
+            <div class="education-details">
+                <h3>Bachelor of Technology in Information Technology</h3>
+                <h4>St. Joseph's Institute of Technology, Chennai</h4>
+                <p>2022–2026 (Pursuing Final year)</p>
+            </div>
+        </div>
+        <div class="education-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuBbR2aQCEPbyvsUD-n8EhP7CYZQ4zOJMjA&s" alt="Rosily School" class="education-logo">
+            <div class="education-details">
+                <h3>Higher Secondary and Secondary School (SSLC and HSC)</h3>
+                <h4>Rosily Matriculation Higher Secondary School</h4>
+                <p>Completed in 2022</p>
+            </div>
+        </div>
+    </section>
 
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-links">
+            <a href="mailto:hirishi2020@gmail.com" class="contact-link"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/hirishi-kesavan" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Hirishikesavan" target="_blank" class="contact-link"><i class="fab fa-github"></i></a>
+        </div>
+        <a href="mailto:hirishi2020@gmail.com" class="email-link">hirishi2020@gmail.com</a>
+        <p>+91 8939127198</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hirishi Kesavan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-</script>
 
+        // Header background change on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.9)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
+
 </html>
 
 
